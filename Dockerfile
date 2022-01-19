@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM janniclas/llvm-build-image:dev
 ARG LLVM_INSTALL_DIR="/usr/local/llvm-12"
 LABEL Name=phasar Version=1.0.0
 
@@ -18,10 +18,6 @@ RUN pip3 install Pygments pyyaml
 # installing boost
 RUN apt install libboost-all-dev -y
 
-# installing LLVM
-COPY utils/safeCommandsSet.sh /usr/src/phasar/utils/safeCommandsSet.sh
-COPY utils/install-llvm.sh /usr/src/phasar/utils/install-llvm.sh
-RUN ./utils/install-llvm.sh $(nproc) . ${LLVM_INSTALL_DIR} "llvmorg-12.0.0"
 
 # installing wllvm
 RUN pip3 install wllvm
