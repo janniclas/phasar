@@ -1,4 +1,4 @@
-FROM janniclas/llvm-build-image:dev
+FROM janniclas/llvm-build-image:12.0.0
 ARG LLVM_INSTALL_DIR="/usr/local/llvm-12"
 LABEL Name=phasar Version=1.0.0
 
@@ -17,7 +17,6 @@ RUN pip3 install Pygments pyyaml
 
 # installing boost
 RUN apt install libboost-all-dev -y
-
 
 # installing wllvm
 RUN pip3 install wllvm
