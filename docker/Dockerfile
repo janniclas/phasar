@@ -8,11 +8,11 @@ RUN apt -y update && apt install bash sudo -y
 WORKDIR /usr/src/phasar
 RUN mkdir -p /usr/src/phasar/utils
 
-COPY ./utils/InitializeEnvironment.sh /usr/src/phasar/utils/
-RUN ./utils/InitializeEnvironment.sh
+COPY /utils/InitializeEnvironment.sh /usr/src/phasar/utils/
+RUN /utils/InitializeEnvironment.sh
 
-COPY ./utils/InstallAptDependencies.sh /usr/src/phasar/utils/
-RUN ./utils/InstallAptDependencies.sh
+COPY ../utils/InstallAptDependencies.sh /usr/src/phasar/utils/
+RUN ../utils/InstallAptDependencies.sh
 
 RUN pip3 install Pygments pyyaml
 
