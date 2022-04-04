@@ -1,5 +1,5 @@
-FROM janniclas/llvm-build-image:12.0.0
-ARG LLVM_INSTALL_DIR="/usr/local/llvm-12"
+FROM janniclas/llvm-build-image:13.0.0
+ARG LLVM_INSTALL_DIR="/usr/local/llvm-13"
 LABEL Name=phasar Version=1.0.0
 
 RUN apt -y update && apt install bash sudo -y
